@@ -1,10 +1,10 @@
 [user]
     email = bob@dobbs.com
-    name = JR "Bob" Dobbs
+    name  = JR "Bob" Dobbs
 [core]
     autocrlf = false
     safecrlf = true
-    editor = vim
+    editor   = vim
 [alias]
     cm   = !git add -A && git commit -m
     co   = checkout
@@ -15,6 +15,7 @@
     save = !git add -A && git commit -m 'SAVEPOINT'
     st   = status
     type = cat-file -t
+    up   = !git fetch && git merge origin/master
     wip  = !git add -A && git commit -m 'WIP'
 [color]
     ui = auto

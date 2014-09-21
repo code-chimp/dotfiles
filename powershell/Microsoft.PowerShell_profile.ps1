@@ -1,13 +1,16 @@
-$env:path += ";" + (Get-Item "Env:ProgramFiles(x86)").Value + "\Git\bin"
-
-set-location d:\work\lab
 $Shell = $Host.UI.RawUI
 $Shell.WindowTitle="Ubergeek PS A-Go-Go"
 $Shell.BackgroundColor = "Black"
 $Shell.ForegroundColor = "Gray"
 
-set-alias fsi 'C:\Program Files (x86)\Microsoft SDKs\F#\3.0\Framework\v4.0\fsi.exe'
-set-alias subl 'C:\Program Files\Sublime Text 2\sublime_text.exe'
+# Love me some F# REPL
+set-alias fsi 'C:\Program Files (x86)\Microsoft SDKs\F#\3.1\Framework\v4.0\fsi.exe'
+
+# Sublime Text 2
+#set-alias subl 'C:\Program Files\Sublime Text 2\sublime_text.exe'
+
+# Sublime Text 3
+set-alias subl 'C:\Program Files\Sublime Text 3\sublime_text.exe'
 
 if(!(Test-Path Function:\TabExpansion)) { New-Item Function:\Global:TabExpansion -value '' | Out-Null }
 
