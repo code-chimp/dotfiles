@@ -1,9 +1,33 @@
-" Plugins: Pathogen, NERDTree, nerdcommenter, Sparkup, YankRing
 " General
-filetype off
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
 set nocompatible
+filetype off
+
+" Vundle Plugin Manager
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'molokai'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'mattn/emmet-vim'
+Plugin 'fatih/vim-go'
+Plugin 'nvie/vim-flake8'
+Plugin 'guns/vim-clojure-static'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-classpath'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'slimv.vim'
+Plugin 'Syntastic'
+Plugin 'ocaml.annot.pl'
+" nimrod special case
+Plugin 'scrooloose/syntastic'
+Plugin 'nimrod.vim'
+au BufNewFile,BufRead *.nim set filetype=nimrod
+call vundle#end()
+filetype plugin indent on
+
 set autochdir
 set modelines=0
 set nobackup
@@ -90,6 +114,18 @@ set sidescrolloff=10 " Keep 5 lines at the size
 syntax on
 let mapleader = ","
 
+" ocaml merlin
+if executable('ocamlmerlin') && has('python')
+    let s:ocamlmerlin = substitute(system('opam config var share'), '\n$', '', '''') . "/ocamlerlin"
+    execute "set rtp+=".s:ocamlmerlin."/vim"
+    execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
+endif
+
+let g:syntastic_ocaml_checkers = ['merlin']
+
+" ocp-indent
+autocmd FileType ocaml source substitute(system('opam config var share'), '\n$', '', '''') . "/typerex/ocp-indent/ocp-indent.vim"
+
 " searching/moving
 nnoremap / /\v
 vnoremap / /\v
@@ -118,14 +154,14 @@ nnoremap <silent> <F3> :YRShow<CR>
 inoremap <silent> <F3> <ESC>:YRShow<CR>
 inoremap jj <ESC>
 " disable arrow keys
-"nnoremap <up> <nop>
-"nnoremap <down> <nop> 
-"nnoremap <left> <nop> 
-"nnoremap <right> <nop> 
-"inoremap <up> <nop>
-"inoremap <down> <nop> 
-"inoremap <left> <nop> 
-"inoremap <right> <nop> 
+nnoremap <up> <nop>
+nnoremap <down> <nop> 
+nnoremap <left> <nop> 
+nnoremap <right> <nop> 
+inoremap <up> <nop>
+inoremap <down> <nop> 
+inoremap <left> <nop> 
+inoremap <right> <nop> 
 "trim all trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 "css sort
@@ -151,3 +187,4 @@ set history=200
 
 set background=light
 set background=dark
+
