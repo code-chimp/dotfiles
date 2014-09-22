@@ -1,3 +1,7 @@
+;; bells are so 1990
+(setq visible-bell t)
+(setq ring-bell-function 'ignore)
+
 ;; set the width (characters wide) and height (lines high)
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 120) (height . 40)))
 
