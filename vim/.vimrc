@@ -12,7 +12,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'fatih/vim-go'
-Plugin 'nvie/vim-flake8'
 Plugin 'guns/vim-clojure-static'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-fireplace'
@@ -27,6 +26,33 @@ Plugin 'nimrod.vim'
 au BufNewFile,BufRead *.nim set filetype=nimrod
 call vundle#end()
 filetype plugin indent on
+
+" make lispy things pretty
+let g:rbpt_colorpairs = [
+    \ ['blue', '#ff6000'],
+    \ ['cyan', '#00ffff'],
+    \ ['darkmagenta', '#cc00ff'],
+    \ ['yellow', '#ffff00'],
+    \ ['red', '#ff0000'],
+    \ ['darkgreen', '#00ff00'],
+    \ ['White', '#c0c0c0'],
+    \ ['blue', '#ff6000'],
+    \ ['cyan', '#00ffff'],
+    \ ['darkmagenta', '#cc00ff'],
+    \ ['yellow', '#ffff00'],
+    \ ['red', '#ff0000'],
+    \ ['darkgreen', '#00ff00'],
+    \ ['White', '#c0c0c0'],
+    \ ['blue', '#ff6000'],
+    \ ['cyan', '#00ffff'],
+    \ ['darkmagenta', '#cc00ff'],
+    \ ['yellow', '#ffff00'],
+    \ ['red', '#ff0000'],
+    \ ['darkgreen', '#00ff00'],
+    \ ['White', '#c0c0c0'],
+    \ ]
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesisLoadRound
 
 set autochdir
 set modelines=0
