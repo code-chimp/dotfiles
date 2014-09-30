@@ -5,56 +5,55 @@ filetype off
 " Vundle Plugin Manager
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 Plugin 'gmarik/Vundle.vim'
+
+" themes
 Plugin 'molokai'
+Plugin 'zenburn'
+Plugin 'Solarized'
+
+" tools
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'mattn/emmet-vim'
-Plugin 'fatih/vim-go'
-Plugin 'guns/vim-clojure-static'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-classpath'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'slimv.vim'
-Plugin 'Syntastic'
-Plugin 'ocaml.annot.pl'
-" nimrod special case
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+
+" parens in the hizouse
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'wlangstroth/vim-racket'
+"  clojure (think I'm moving to LightTable for this)
+"Plugin 'guns/vim-clojure-static'
+"Plugin 'tpope/vim-fireplace' " Clojure REPL
+"Plugin 'tpope/vim-classpath' " Set 'path' from Java class path
+
+" just plain handy to have around
 Plugin 'nimrod.vim'
-au BufNewFile,BufRead *.nim set filetype=nimrod
+Plugin 'mattn/emmet-vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'fatih/vim-go'
+Plugin 'ocaml.annot.pl'
+
 call vundle#end()
 filetype plugin indent on
 
 " make lispy things pretty
 let g:rbpt_colorpairs = [
-    \ ['blue', '#ff6000'],
-    \ ['cyan', '#00ffff'],
-    \ ['darkmagenta', '#cc00ff'],
-    \ ['yellow', '#ffff00'],
-    \ ['red', '#ff0000'],
-    \ ['darkgreen', '#00ff00'],
-    \ ['White', '#c0c0c0'],
-    \ ['blue', '#ff6000'],
-    \ ['cyan', '#00ffff'],
-    \ ['darkmagenta', '#cc00ff'],
-    \ ['yellow', '#ffff00'],
-    \ ['red', '#ff0000'],
-    \ ['darkgreen', '#00ff00'],
-    \ ['White', '#c0c0c0'],
-    \ ['blue', '#ff6000'],
-    \ ['cyan', '#00ffff'],
-    \ ['darkmagenta', '#cc00ff'],
-    \ ['yellow', '#ffff00'],
-    \ ['red', '#ff0000'],
-    \ ['darkgreen', '#00ff00'],
-    \ ['White', '#c0c0c0'],
+    \ ['magenta', 'purple1'],
+    \ ['cyan', 'magenta1'],
+    \ ['green', 'slateblue1'],
+    \ ['yellow', 'cyan1'],
+    \ ['red', 'springgreen1'],
+    \ ['magenta', 'green1'],
+    \ ['cyan', 'greenyellow'],
+    \ ['green', 'yellow1'],
+    \ ['yellow', 'orange1'],
     \ ]
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesisLoadRound
+au BufNewFile,BufRead *.rkts set filetype=racket
+au BufNewFile,BufRead *.nim set filetype=nimrod
 
+" on with the show
 set autochdir
 set modelines=0
 set nobackup
@@ -111,7 +110,7 @@ set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
 set wildmode=list:longest 
 
 " ui settings
-set guifont=consolas:h9
+set guifont=Ubuntu\ Mono\ 12
 colorscheme molokai
 set laststatus=2     " always show the status line
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
