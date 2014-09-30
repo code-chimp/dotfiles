@@ -4,7 +4,7 @@ filetype off
 
 set rtp+=~/vimfiles/bundle/Vundle.vim/
 let path='~/vimfiles/bundle'
-call vundle#begin(path)
+call vundle#rc()
 "Plugin 'gmarik/vundle'
 
 " themes
