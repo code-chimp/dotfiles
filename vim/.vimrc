@@ -17,6 +17,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 
 " parens in the hizouse
 Plugin 'kien/rainbow_parentheses.vim'
