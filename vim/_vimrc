@@ -2,11 +2,10 @@
 set nocompatible
 filetype off
 
-let win_shell =(has('win32') || has('win64')) && &shellcmdflag =~ '/'
-let vimDir = win_shell ? '$HOME/vimfiles' : '$HOME/.vim'
-let &runtimepath .= ',' . expand(vimDir . '/bundle/vundle')
-call vundle#rc(expand(vimDir . '/bundle'))
-Plugin 'gmarik/vundle'
+set rtp+=~/vimfiles/bundle/Vundle.vim/
+let path='~/vimfiles/bundle'
+call vundle#begin(path)
+"Plugin 'gmarik/vundle'
 
 " themes
 Plugin 'zenburn'
