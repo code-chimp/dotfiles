@@ -18,6 +18,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'editorconfig-vim'
 
 " parens in the hizouse
 Plugin 'kien/rainbow_parentheses.vim'
@@ -29,6 +30,8 @@ Plugin 'wlangstroth/vim-racket'
 
 " just plain handy to have around
 Plugin 'nimrod.vim'
+Plugin 'less.vim'
+Plugin 'Sass;
 Plugin 'mattn/emmet-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'fatih/vim-go'
