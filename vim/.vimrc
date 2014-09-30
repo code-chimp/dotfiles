@@ -31,7 +31,7 @@ Plugin 'wlangstroth/vim-racket'
 " just plain handy to have around
 Plugin 'nimrod.vim'
 Plugin 'less.vim'
-Plugin 'Sass;
+Plugin 'Sass'
 Plugin 'mattn/emmet-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'fatih/vim-go'
