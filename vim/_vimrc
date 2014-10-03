@@ -4,7 +4,7 @@ filetype off
 
 set rtp+=~/vimfiles/bundle/Vundle.vim/
 let path='~/vimfiles/bundle'
-call vundle#rc()
+call vundle#rc(path)
 "Plugin 'gmarik/vundle'
 
 " themes
@@ -32,7 +32,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'less.vim'
 Plugin 'Sass'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'faith/vim-go'
+"Plugin 'faith/vim-go' " for some reason wants my github login?
 Plugin 'ocaml.annot.pl'
 
 filetype plugin indent on
