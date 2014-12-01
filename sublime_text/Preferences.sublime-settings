@@ -1,0 +1,53 @@
+{
+    "always_show_minimap_viewport": true,
+    "binary_file_patterns":
+    [
+        ".DS_Store",
+        "Thumbs.db",
+        "node_modules",
+        "*.min.js"
+    ],
+    "bold_folder_labels": true,
+    "caret_style": "phase",
+    "color_scheme": "Packages/User/cobalt2 (SL).tmTheme",
+    "drag_text": false,
+    "draw_minimap_border": true,
+    "draw_white_space": "all",
+    "fade_fold_buttons": false,
+    "file_exclude_patterns":
+    [
+        "*.sublime-workspace",
+        ".DS_Store",
+        "Thumbs.db",
+        "node_modules",
+        "*.min.js"
+    ],
+    "font_face": "Ubuntu Mono",
+    "font_options":
+    [
+        "no_round"
+    ],
+    "font_size": 10,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Vintage",
+        "CSS",
+        "Markdown"
+    ],
+    "indent_guide_options":
+    [
+        "draw_normal",
+        "draw_active"
+    ],
+    "match_brackets_content": false,
+    "match_selection": false,
+    "match_tags": false,
+    "preview_on_click": true,
+    "reveal-on-activate": true,
+    "sidebar_default": true,
+    "theme": "Cobalt2.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "word_wrap": false
+}
