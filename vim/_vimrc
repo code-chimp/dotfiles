@@ -4,8 +4,8 @@ filetype off
 
 set rtp+=~/vimfiles/bundle/Vundle.vim/
 let path='~/vimfiles/bundle'
-call vundle#rc()
-"Plugin 'gmarik/vundle'
+call vundle#rc(path)
+Plugin 'gmarik/Vundle.vim'
 
 " themes
 Plugin 'zenburn'
@@ -17,7 +17,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'editorconfig-vim'
 
 " parens in the hizouse
 Plugin 'kien/rainbow_parentheses.vim'
@@ -34,6 +33,9 @@ Plugin 'Sass'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'faith/vim-go'
 Plugin 'ocaml.annot.pl'
+
+" load last to take precedence
+Plugin 'editorconfig-vim'
 
 filetype plugin indent on
 
