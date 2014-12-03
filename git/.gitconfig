@@ -2,9 +2,12 @@
     email = bob@dobbs.com
     name  = JR "Bob" Dobbs
 [core]
+    editor   = vim
+    # Linux / OSX
     autocrlf = false
     safecrlf = true
-    editor   = vim
+    # Windows
+    ; autocrlf = true
 [alias]
     cm   = !git add -A && git commit -m
     co   = checkout
