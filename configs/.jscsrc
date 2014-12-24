@@ -1,0 +1,113 @@
+// See: https://www.npmjs.org/package/jscs
+{
+    "validateIndentation": 4,
+    "validateQuoteMarks": "'",
+
+    "disallowKeywords": ["with"],
+    "disallowKeywordsOnNewLine": ["while"],
+    "disallowMixedSpacesAndTabs": true,
+    "disallowMultipleLineBreaks": true,
+    "disallowPaddingNewlinesInBlocks": true,
+    "disallowSpaceAfterObjectKeys": true,
+    "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"],
+    "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
+    "disallowTrailingWhitespace": true,
+    "disallowYodaConditions": true,
+
+    "requireBlocksOnNewline": 1,
+    "requireCamelCaseOrUpperCaseIdentifiers": true,
+    "requireCommaBeforeLineBreak": true,
+    "requireCapitalizedConstructors": true,
+    "requireCurlyBraces": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "try",
+        "catch",
+        "case",
+        "default"
+    ],
+    "requireKeywordsOnNewLine": ["else", "catch"],
+    "requireOperatorBeforeLineBreak": [
+        "?",
+        "=",
+        "+",
+        "-",
+        "/",
+        "*",
+        "==",
+        "===",
+        "!=",
+        "!==",
+        ">",
+        ">=",
+        "<",
+        "<="
+    ],
+    "requireParenthesesAroundIIFE": true,
+    "requireSpaceAfterBinaryOperators": [
+        ",",
+        "=",
+        "+",
+        "-",
+        "/",
+        "*",
+        "==",
+        "===",
+        "!=",
+        "!==",
+        ">",
+        ">=",
+        "<",
+        "<=",
+        "+=",
+        "-=",
+        "*=",
+        "/="
+    ],
+    "requireSpaceAfterKeywords": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "switch",
+        "try",
+        "catch"
+    ],
+    "requireSpaceAfterLineComment": true,
+    "requireSpaceBeforeBlockStatements": true,
+    "requireSpacesInConditionalExpression": {
+        "afterTest": true,
+        "beforeConsequent": true,
+        "afterConsequent": true,
+        "beforeAlternate": true
+    },
+    "requireSpaceBeforeBinaryOperators": [
+        "=",
+        "+",
+        "-",
+        "/",
+        "*",
+        "==",
+        "===",
+        "!=",
+        "!==",
+        ">",
+        ">=",
+        "<",
+        "<=",
+        "+=",
+        "-=",
+        "*=",
+        "/="
+    ],
+
+    "safeContextKeyword": ["_this"],
+
+    "excludeFiles": [
+        // "test/data/**"
+    ]
+}
