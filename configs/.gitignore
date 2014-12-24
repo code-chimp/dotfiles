@@ -1,0 +1,52 @@
+## Node
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+
+
+## SublimeText
+*.sublime-workspace
+
+
+## Linux
+.*
+!.gitignore
+!.bowerrc
+*~
+
+# KDE
+.directory
+
+
+## Windows
+Thumbs.db 
+Desktop.ini
+$RECYCLE.BIN/
+
+
+## OSX
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+
+## Project specific
+.sass-cache/
+node_modules/
+bower_components/
+dist/
+staging/
+dev/public/css/
+test_dataset.json
