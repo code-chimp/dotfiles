@@ -6,11 +6,14 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.js]
+[*.{c,cpp,cs,js,py}]
 indent_size = 4
 
-[*.json]
+[*.{clj,css,html,json,lisp,rb,rkt,rkts,scm}]
 indent_size = 2
 
-[*.html]
-indent_size = 2
+[*.go]
+indent_style = tab
+
+[*.py]
+insert_final_newline=false
