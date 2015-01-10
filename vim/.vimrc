@@ -18,14 +18,11 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'Markdown'
 
 " parens in the hizouse
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'wlangstroth/vim-racket'
-"  clojure (think I'm moving to LightTable for this)
-"Plugin 'guns/vim-clojure-static'
-"Plugin 'tpope/vim-fireplace' " Clojure REPL
-"Plugin 'tpope/vim-classpath' " Set 'path' from Java class path
 
 " just plain handy to have around
 Plugin 'nimrod.vim'
@@ -35,6 +32,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'fatih/vim-go'
 Plugin 'ocaml.annot.pl'
+Plugin 'elzr/vim-json'
 
 " load last to take precedence
 Plugin 'editorconfig-vim'
@@ -58,6 +56,18 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesisLoadRound
 au BufNewFile,BufRead *.rkts set filetype=racket
 au BufNewFile,BufRead *.nim set filetype=nimrod
+
+" ocaml merlin
+if executable('ocamlmerlin') && has('python')
+    let s:ocamlmerlin = substitute(system('opam config var share'), '\n$', '', '''') . "/ocamlerlin"
+    execute "set rtp+=".s:ocamlmerlin."/vim"
+    execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
+endif
+
+let g:syntastic_ocaml_checkers = ['merlin']
+
+" ocp-indent
+autocmd FileType ocaml source substitute(system('opam config var share'), '\n$', '', '''') . "/typerex/ocp-indent/ocp-indent.vim"
 
 " on with the show
 set autochdir
