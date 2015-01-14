@@ -14,7 +14,7 @@
     cob  = checkout -b
     dump = cat-file -p
     ec   = config --global -e
-    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    hist = log --graph --full-history --all --pretty=format:'%C(yellow bold)%h%Creset -%C(green bold)%d%Creset %s %C(green)(%cr) %C(bold cyan)<%an>%Creset'
     save = !git add -A && git commit -m 'SAVEPOINT'
     st   = status
     type = cat-file -t
