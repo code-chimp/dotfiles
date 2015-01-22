@@ -45,6 +45,7 @@
     "match_tags": false,
     "preview_on_click": true,
     "reveal-on-activate": true,
+    "show_encoding": true,
     "sidebar_default": true,
     "theme": "Cobalt2.sublime-theme",
     "translate_tabs_to_spaces": true,
