@@ -9,7 +9,7 @@ insert_final_newline = true
 [*.{c,cpp,cs,js,py}]
 indent_size = 4
 
-[*.{clj,css,html,json,lisp,rb,rkt,rkts,scm}]
+[*.{clj,coffee,css,html,json,lisp,rb,rkt,rkts,scm}]
 indent_size = 2
 
 [*.go]
