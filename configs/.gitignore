@@ -15,14 +15,18 @@ results
 npm-debug.log
 
 
+## Directories
+.sass-cache
+node_modules
+bower_components
+
+
 ## SublimeText
 *.sublime-workspace
 
 
 ## Linux
 .*
-!.gitignore
-!.bowerrc
 *~
 
 # KDE
@@ -30,7 +34,7 @@ npm-debug.log
 
 
 ## Windows
-Thumbs.db 
+Thumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 
@@ -42,10 +46,17 @@ $RECYCLE.BIN/
 .Trashes
 
 
+## Config Files
+!.gitignore
+!.editorconfig
+!.bowerrc
+!.eslintrc
+!.jshintrc
+!.jsxhintrc
+!.jscsrc
+
+
 ## Project specific
-.sass-cache/
-node_modules/
-bower_components/
 dist/
 staging/
 dev/public/css/

@@ -1,8 +1,10 @@
-// See: https://www.npmjs.org/package/jscs
 {
+    "excludeFiles": [
+        "./js/bundle.js",
+        "./js/bundle.min.js"
+    ],
     "validateIndentation": 4,
     "validateQuoteMarks": "'",
-
     "disallowKeywords": ["with"],
     "disallowKeywordsOnNewLine": ["while"],
     "disallowMixedSpacesAndTabs": true,
@@ -13,7 +15,6 @@
     "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
     "disallowTrailingWhitespace": true,
     "disallowYodaConditions": true,
-
     "requireBlocksOnNewline": 1,
     "requireCamelCaseOrUpperCaseIdentifiers": true,
     "requireCommaBeforeLineBreak": true,
@@ -26,7 +27,6 @@
         "do",
         "try",
         "catch",
-        "case",
         "default"
     ],
     "requireKeywordsOnNewLine": ["else", "catch"],
@@ -104,10 +104,5 @@
         "*=",
         "/="
     ],
-
-    "safeContextKeyword": ["_this"],
-
-    "excludeFiles": [
-        // "test/data/**"
-    ]
+    "safeContextKeyword": ["_this"]
 }
