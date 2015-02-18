@@ -22,3 +22,5 @@
     wip  = !git add -A && git commit -m 'WIP'
 [color]
     ui = auto
+[rerere]
+    enambled = true
