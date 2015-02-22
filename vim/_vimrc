@@ -5,7 +5,7 @@ filetype off
 set rtp+=~/vimfiles/bundle/Vundle.vim/
 let path='~/vimfiles/bundle'
 call vundle#rc(path)
-" Plugin 'gmarik/vundle'
+"Plugin 'gmarik/vundle'
 
 " themes
 Plugin 'zenburn'
@@ -15,27 +15,24 @@ Plugin 'Solarized'
 " tools
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'editorconfig-vim'
-Plugin 'Syntastic'
-Plugin 'ctrlp.vim'
 
 " parens in the hizouse
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'wlangstroth/vim-racket'
-"  clojure (think I'm moving to LightTable for this)
-"Plugin 'guns/vim-clojure-static'
-"Plugin 'tpope/vim-fireplace' " Clojure REPL
-"Plugin 'tpope/vim-classpath' " Set 'path' from Java class path
 
 " just plain handy to have around
-Plugin 'mattn/emmet-vim'
 Plugin 'less.vim'
 Plugin 'Sass'
+Plugin 'mattn/emmet-vim'
 Plugin 'kchmck/vim-coffee-script'
-"Plugin 'faith/vim-go' " for some reason wants my github login?
+"Plugin 'faith/vim-go'
 Plugin 'ocaml.annot.pl'
+Plugin 'elzr/vim-json'
+Plugin 'Pydiction'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " load last to take precedence
 Plugin 'editorconfig-vim'
@@ -70,7 +67,12 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au BufNewFile,BufRead *.rkts set filetype=racket
 
+" Pydiction
+let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
+let g:pydiction_menu_height = 4
+
 " on with the show
+let $TMP=expand('~/tmp')
 set autochdir
 set modelines=0
 set nobackup
@@ -128,7 +130,7 @@ set wildmode=list:longest
 
 " ui settings
 set guifont=consolas:h9
-colorscheme molokai
+colorscheme zenburn
 set laststatus=2     " always show the status line
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
  "             | | | | |  |   |      |  |     |    |
