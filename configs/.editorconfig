@@ -1,15 +1,16 @@
 root = true
 
 [*]
+charset = utf-8
 indent_style = space
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{c,cpp,cs,js,py}]
+[*.{c,cpp,cs,js,jsx,py}]
 indent_size = 4
 
-[*.{clj,coffee,css,html,json,lisp,rb,rkt,rkts,scm}]
+[*.{clj,coffee,css,html,jade,json,lisp,raml,rb,rkt,rtks,sass,scss,scm}]
 indent_size = 2
 
 [*.go]

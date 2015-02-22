@@ -3,6 +3,8 @@
         "./js/bundle.js",
         "./js/bundle.min.js"
     ],
+    "esprima": "esprima-fb",
+    "fileExtensions": [".js", ".jsx"],
     "validateIndentation": 4,
     "validateQuoteMarks": "'",
     "disallowKeywords": ["with"],
@@ -75,7 +77,8 @@
         "do",
         "switch",
         "try",
-        "catch"
+        "catch",
+        "function"
     ],
     "requireSpaceAfterLineComment": true,
     "requireSpaceBeforeBlockStatements": true,
