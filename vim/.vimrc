@@ -33,6 +33,9 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'fatih/vim-go'
 Plugin 'ocaml.annot.pl'
 Plugin 'elzr/vim-json'
+Plugin 'Pydiction'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " load last to take precedence
 Plugin 'editorconfig-vim'
