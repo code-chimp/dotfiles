@@ -33,11 +33,16 @@ Plugin 'elzr/vim-json'
 Plugin 'Pydiction'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'bling/vim-airline'
 
 " load last to take precedence
 Plugin 'editorconfig-vim'
 
 filetype plugin indent on
+
+set t_Co=256
+
+let g:airline_powerline_fonts = 1
 
 " make lispy things pretty
 let g:rbpt_colorpairs = [
