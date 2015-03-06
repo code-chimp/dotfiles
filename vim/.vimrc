@@ -36,12 +36,17 @@ Plugin 'elzr/vim-json'
 Plugin 'Pydiction'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'bling/vim-airline'
 
 " load last to take precedence
 Plugin 'editorconfig-vim'
 
 call vundle#end()
 filetype plugin indent on
+
+set t_Co=256
+
+let g:airline_powerline_fonts = 1
 
 " make lispy things pretty
 let g:rbpt_colorpairs = [
@@ -59,6 +64,10 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesisLoadRound
 au BufNewFile,BufRead *.rkts set filetype=racket
 au BufNewFile,BufRead *.nim set filetype=nimrod
+
+" Pydiction
+let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
+let g:pydiction_menu_height = 4
 
 " ocaml merlin
 if executable('ocamlmerlin') && has('python')
@@ -84,9 +93,9 @@ set novisualbell " don't blink
 set vb t_vb=     " not even for a second
 set autowriteall
 set whichwrap=b,s,<,>,~
- "            | | | | | 
- "            | | | | | 
- "            | | | | | 
+ "            | | | | |
+ "            | | | | |
+ "            | | | | |
  "            | | | | +-- "~" Normal
  "            | | | +-- <Right> Normal and Visual
  "            | | +-- <Left> Normal and Visual
@@ -110,23 +119,23 @@ set cpoptions=aABceFsmq
 
 " formatting
 set encoding=utf-8
-set tabstop=4 
-set shiftwidth=4 
-set softtabstop=4 
-set expandtab 
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 set smarttab
-set shiftround 
-set nowrap 
+set shiftround
+set nowrap
 set autoindent
 set smartindent
 
-set scrolloff=3 
+set scrolloff=3
 set showmode
-set showcmd 
-set backspace=indent,eol,start 
-set wildmenu 
+set showcmd
+set backspace=indent,eol,start
+set wildmenu
 set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
-set wildmode=list:longest 
+set wildmode=list:longest
 
 " ui settings
 set guifont=Ubuntu\ Mono\ 12
@@ -146,15 +155,15 @@ set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
  "             | +-- rodified flag in square brackets
  "             +-- full path to file in the buffer
 set lazyredraw       " do not redraw while running macros
-set linespace=0 
-set list 
-set listchars=tab:>-,trail:- 
+set linespace=0
+set list
+set listchars=tab:>-,trail:-
 set nostartofline    " leave my cursor where it was
 set number           " turn on line numbers
 set numberwidth=4    " We are good up to 9999 lines
 set report=0         " tell us when anything is changed via :...
 set ruler            " Always show current positions along the bottom
-set shortmess=aOstT 
+set shortmess=aOstT
 set sidescrolloff=10 " Keep 5 lines at the size
 syntax on
 let mapleader = ","
@@ -175,7 +184,7 @@ autocmd FileType ocaml source substitute(system('opam config var share'), '\n$',
 nnoremap / /\v
 vnoremap / /\v
 set ignorecase
-set smartcase 
+set smartcase
 set gdefault    " always use global replace
 set showmatch   " show matching brackets
 set matchtime=5 " tenths of a second to blink
@@ -183,7 +192,7 @@ set hlsearch    " highlighted search
 set incsearch   " BUT do highlight as you type searchterm
 nnoremap <leader><space> :noh<CR> " '\ ' turns off highlighting
 
-" Folding 
+" Folding
 set foldenable        " Turn on folding
 set foldmarker={,}    " Fold C style code (only use this as default if you use a high foldlevel)
 set foldmethod=marker " Fold on the marker
@@ -200,13 +209,13 @@ inoremap <silent> <F3> <ESC>:YRShow<CR>
 inoremap jj <ESC>
 " disable arrow keys
 nnoremap <up> <nop>
-nnoremap <down> <nop> 
-nnoremap <left> <nop> 
-nnoremap <right> <nop> 
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
 inoremap <up> <nop>
-inoremap <down> <nop> 
-inoremap <left> <nop> 
-inoremap <right> <nop> 
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 "trim all trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 "css sort
@@ -225,7 +234,7 @@ set relativenumber
 set undofile
 set undodir=/tmp
 
-" Custom 
+" Custom
  " Enable a nice big viminfo file
 set viminfo='500,f1,:500,/500
 set history=200
