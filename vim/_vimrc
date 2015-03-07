@@ -40,8 +40,6 @@ Plugin 'editorconfig-vim'
 
 filetype plugin indent on
 
-set t_Co=256
-
 let g:airline_powerline_fonts = 1
 
 " make lispy things pretty
