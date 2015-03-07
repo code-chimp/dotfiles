@@ -132,10 +132,10 @@ set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
 set wildmode=list:longest
 
 " ui settings
-set guifont=consolas:h9
+set guifont=Ubuntu_Mono_derivative_Powerlin:h10:cANSI
 colorscheme zenburn
 set laststatus=2     " always show the status line
-set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+"set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
  "             | | | | |  |   |      |  |     |    |
  "             | | | | |  |   |      |  |     |    + current column
  "             | | | | |  |   |      |  |     +-- current line
