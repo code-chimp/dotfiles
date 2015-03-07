@@ -229,6 +229,15 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+"gui defaults and display control
+" menu, toolbar, and right-scroll off by default
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+nnoremap <C-m> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
+nnoremap <C-t> :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
+nnoremap <C-r> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
+
 " 7.3
 set relativenumber
 set undofile
@@ -238,7 +247,4 @@ set undodir=/tmp
  " Enable a nice big viminfo file
 set viminfo='500,f1,:500,/500
 set history=200
-
-set background=light
-set background=dark
 
