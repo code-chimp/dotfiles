@@ -18,13 +18,14 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'Markdown'
+Plugin 'ctrlp.vim'
 
 " parens in the hizouse
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'wlangstroth/vim-racket'
 
 " just plain handy to have around
+Plugin 'Markdown'
 Plugin 'nimrod.vim'
 Plugin 'less.vim'
 Plugin 'Sass'
@@ -36,6 +37,7 @@ Plugin 'elzr/vim-json'
 Plugin 'Pydiction'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'bling/vim-airline'
 
 " load last to take precedence
@@ -64,6 +66,11 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesisLoadRound
 au BufNewFile,BufRead *.rkts set filetype=racket
 au BufNewFile,BufRead *.nim set filetype=nimrod
+
+" typescript
+let g:typescript_compiler_options = '-sourcemap'
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 " Pydiction
 let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
