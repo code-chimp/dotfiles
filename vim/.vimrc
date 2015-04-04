@@ -72,6 +72,9 @@ let g:typescript_compiler_options = '-sourcemap'
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
+" JSNext
+au BufNewFile,BufRead *.es6 setf javascript
+
 " Pydiction
 let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 let g:pydiction_menu_height = 4
