@@ -7,10 +7,10 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{c,cpp,cs,go,js,jsx,py}]
+[*.{c,cpp,cs,go,py}]
 indent_size = 4
 
-[*.{clj,coffee,css,hbs,html,jade,json,lisp,raml,rb,rkt,rtks,sass,scss,scm}]
+[*.{clj,coffee,css,es6,hbs,hh,html,jade,js,json,jsx,lisp,php,raml,rb,rkt,rtks,sass,scss,scm}]
 indent_size = 2
 
 [*.go]
