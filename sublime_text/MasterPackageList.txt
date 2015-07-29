@@ -1,0 +1,23 @@
+AdvancedNewFile,Alignment,AutoFileName,Babel,Better CoffeeScript
+
+Better TypeScript,BoundKeys,ChangeQuotes,Color Highlighter,CSS3
+
+Docker Syntax Highlighting,EditorConfig,Emmet,EncodingHelper,FBP
+
+FindKeyConflicts,Gitignore,GitSavvy,Grunt,Gulp
+
+Handlebars,HexViewer,HTML-CSS-JS Prettify,HTML5,Jade
+
+jQuery,JsFormat,LESS,LESS-build,List stylesheet variables
+
+Markdown Extended,Markdown Preview,RAML Syntax Highlighter,Sass,SASS Build
+
+SCSS,Print to HTML,Origami,Pretty JSON,SideBarEnhancements
+
+Simple Print Function,SublimeCodeIntel,SqlBeautifier,SublimeREPL,SyncedSideBar
+
+Terminal,TrailingSpaces,WordCount
+
+
+// Specialty
+F#,Razor
