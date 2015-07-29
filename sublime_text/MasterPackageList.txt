@@ -1,8 +1,11 @@
+** Note: Trying to use advanced install with packages that are already installed
+**       busts the hell out of st3
+
 AdvancedNewFile,Alignment,AutoFileName,Babel,Better CoffeeScript
 
 Better TypeScript,BoundKeys,ChangeQuotes,Color Highlighter,CSS3
 
-Docker Syntax Highlighting,EditorConfig,Emmet,EncodingHelper,FBP
+Dockerfile Syntax Highlighting,EditorConfig,Emmet,EncodingHelper,FBP
 
 FindKeyConflicts,Gitignore,GitSavvy,Grunt,Gulp
 
@@ -16,7 +19,7 @@ SCSS,Print to HTML,Origami,Pretty JSON,SideBarEnhancements
 
 Simple Print Function,SublimeCodeIntel,SqlBeautifier,SublimeREPL,SyncedSideBar
 
-Terminal,TrailingSpaces,WordCount
+Terminal,Theme - Afterglow,TrailingSpaces,WordCount
 
 
 // Specialty
