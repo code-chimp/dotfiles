@@ -1,9 +1,4 @@
 {
-    "excludeFiles": [
-        "./js/bundle.js",
-        "./js/bundle.min.js"
-    ],
-    "esprima": "esprima-fb",
     "fileExtensions": [".js", ".jsx"],
     "validateIndentation": 4,
     "validateQuoteMarks": "'",

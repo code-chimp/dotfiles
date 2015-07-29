@@ -7,7 +7,7 @@
     "node": true
   },
   "rules": {
-    "camelcase": 2,
+    "camelcase": [2, {"properties": "always"}],
     "curly": [2, "all"],
     "default-case": 0,
     "eqeqeq": 2,
