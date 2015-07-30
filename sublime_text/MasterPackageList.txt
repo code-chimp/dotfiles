@@ -1,26 +1,63 @@
 ** Note: Trying to use advanced install with packages that are already installed
 **       busts the hell out of st3
 
-AdvancedNewFile,Alignment,AutoFileName,Babel,Better CoffeeScript
-
-Better TypeScript,BoundKeys,ChangeQuotes,Color Highlighter,CSS3
-
-Dockerfile Syntax Highlighting,EditorConfig,Emmet,EncodingHelper,FBP
-
-FindKeyConflicts,Gitignore,GitSavvy,Grunt,Gulp
-
-Handlebars,HexViewer,HTML-CSS-JS Prettify,HTML5,Jade
-
-jQuery,JsFormat,LESS,LESS-build,List stylesheet variables
-
-Markdown Extended,Markdown Preview,RAML Syntax Highlighter,Sass,SASS Build
-
-SCSS,Print to HTML,Origami,Pretty JSON,SideBarEnhancements
-
-Simple Print Function,SublimeCodeIntel,SqlBeautifier,SublimeREPL,SyncedSideBar
-
-Terminal,Theme - Afterglow,TrailingSpaces,WordCount
-
+AdvancedNewFile
+Alignment
+Anaconda
+AutoFileName
+Babel
+Better CoffeeScript
+Better TypeScript
+BoundKeys
+BracketHighlighter
+ChangeQuotes
+Color Highlighter
+CSS3
+Cucumber
+Cucumber Step Finder
+DocBlockr
+Dockerfile Syntax Highlighting
+EditorConfig
+Emmet
+EncodingHelper
+Enhanced Clojure
+FBP
+FindKeyConflicts
+Gist
+Gitignore
+GitSavvy
+Grunt
+Gulp
+Handlebars
+HexViewer
+HTML-CSS-JS Prettify
+HTML5
+Jade
+jQuery
+JsFormat
+LESS
+LESS-build
+List stylesheet variables
+Markdown Extended
+Markdown Preview
+Origami
+Pretty JSON
+Print to HTML
+RAML Syntax Highlighter
+Sass
+SASS Build
+SCSS
+SideBarEnhancements
+Simple Print Function
+SqlBeautifier
+Stylus
+SublimeCodeIntel
+SublimeREPL
+SyncedSideBar
+Terminal
+Theme - Afterglow
+TrailingSpaces
+WordCount
 
 // Specialty
 F#,Razor
