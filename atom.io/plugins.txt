@@ -1,0 +1,17 @@
+advanced-new-file
+afterglow-monokai-syntax
+afterglow-plus
+change-case
+emmet
+grunt-runner
+gulp-control
+hyperclick
+language-babel
+linter
+linter-eslint
+linter-jsxhint
+nuclide-installer
+react
+seti-ui
+toggle-quotes
+
