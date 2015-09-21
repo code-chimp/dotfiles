@@ -9,8 +9,8 @@ hyperclick
 language-babel
 linter
 linter-eslint
-linter-jsxhint
 nuclide-installer
+minimap
 react
 seti-ui
 toggle-quotes
