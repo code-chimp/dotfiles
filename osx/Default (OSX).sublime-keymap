@@ -1,0 +1,21 @@
+[
+  {
+    "keys": ["tab"],
+    "command": "chain",
+    "args": {
+      "commands": [
+        ["expand_abbreviation_by_tab"],
+        ["reg_replace", {"replacements": ["js_class"]}]
+      ]
+    },
+    "context": [
+      {"operand": "source.js", "operator": "equal", "match_all": true, "key": "selector"},
+      {"key": "preceding_text", "operator": "regex_contains", "operand": "(\\w+>\\w+|\\s(\\.?|a|div|span|p|button)\\.\\w+)", "match_all": true},
+      {"key": "selection_empty", "operator": "equal", "operand": true, "match_all": true}
+    ]
+  },
+  {"keys": ["home"], "command": "move_to", "args": {"to": "bol"}},
+  {"keys": ["end"], "command": "move_to", "args": {"to": "eol"}},
+  {"keys": ["shift+home"], "command": "move_to", "args": {"to": "bol", "extend": true}},
+  {"keys": ["shift+end"], "command": "move_to", "args": {"to": "eol", "extend": true}}
+]
