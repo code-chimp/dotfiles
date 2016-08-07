@@ -2,48 +2,40 @@
 set nocompatible
 filetype off
 
-" Vundle Plugin Manager
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+" vim-plug Plug Manager
+call plug#begin('~/.vim/plugged')
 
 " themes
-Plugin 'molokai'
-Plugin 'zenburn'
-Plugin 'Solarized'
+Plug 'molokai'
 
 " tools
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'ctrlp.vim'
 
 " parens in the hizouse
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'wlangstroth/vim-racket'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'wlangstroth/vim-racket'
 
 " just plain handy to have around
-Plugin 'Markdown'
-Plugin 'nimrod.vim'
-Plugin 'less.vim'
-Plugin 'Sass'
-Plugin 'mattn/emmet-vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'fatih/vim-go'
-Plugin 'ocaml.annot.pl'
-Plugin 'elzr/vim-json'
-Plugin 'Pydiction'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'bling/vim-airline'
+Plug 'Markdown'
+Plug 'less.vim'
+Plug 'Sass'
+Plug 'mattn/emmet-vim'
+Plug 'fatih/vim-go'
+Plug 'Pydiction'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+Plug 'bling/vim-airline'
 
 " load last to take precedence
-Plugin 'editorconfig-vim'
+Plug 'editorconfig-vim'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 set t_Co=256
@@ -65,18 +57,14 @@ let g:rbpt_colorpairs = [
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesisLoadRound
 au BufNewFile,BufRead *.rkts set filetype=racket
-au BufNewFile,BufRead *.nim set filetype=nimrod
 
 " typescript
 let g:typescript_compiler_options = '-sourcemap'
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-" JSNext
-au BufNewFile,BufRead *.es6 setf javascript
-
 " Pydiction
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
+let g:pydiction_location = '~/.vim/plugged/Pydiction/complete-dict'
 let g:pydiction_menu_height = 4
 
 " ocaml merlin
@@ -177,18 +165,6 @@ set shortmess=aOstT
 set sidescrolloff=10 " Keep 5 lines at the size
 syntax on
 let mapleader = ","
-
-" ocaml merlin
-if executable('ocamlmerlin') && has('python')
-    let s:ocamlmerlin = substitute(system('opam config var share'), '\n$', '', '''') . "/ocamlerlin"
-    execute "set rtp+=".s:ocamlmerlin."/vim"
-    execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
-endif
-
-let g:syntastic_ocaml_checkers = ['merlin']
-
-" ocp-indent
-autocmd FileType ocaml source substitute(system('opam config var share'), '\n$', '', '''') . "/typerex/ocp-indent/ocp-indent.vim"
 
 " searching/moving
 nnoremap / /\v
