@@ -1,44 +1,56 @@
 " General
-let $TMPDIR=$HOME."/tmp"
+let $TMP=expand('~/tmp')
 set nocompatible
-filetype off
 
-set rtp+=~/vimfiles/bundle/Vundle.vim/
-let path='~/vimfiles/bundle'
-call vundle#rc(path)
-"Plugin 'gmarik/vundle'
+call plug#begin('~/vimfiles/plugged')
 
 " themes
-Plugin 'zenburn'
-Plugin 'molokai'
-Plugin 'Solarized'
+Plug 'zenburn'
+Plug 'molokai'
+
+" general
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
+Plug 'airblade/vim-gitgutter'
+Plug 'nathanaelkane/vim-indent-guides'
+
+" autocomplete
+Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --tern-completer --omnisharp-completer'}
+
+" JavaScript
+Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
+Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
+Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'javascript.jsx']}
+Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
 
 " tools
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-Plugin 'ctrlp.vim'
+Plug 'flowtype/vim-flow', {'for': ['javascript', 'javascript.jsx']}
+Plug 'scrooloose/syntastic'
 
 " parens in the hizouse
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'wlangstroth/vim-racket'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'wlangstroth/vim-racket'
 
 " just plain handy to have around
-Plugin 'Markdown'
-Plugin 'less.vim'
-Plugin 'Sass'
-Plugin 'mattn/emmet-vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'ocaml.annot.pl'
-Plugin 'elzr/vim-json'
-Plugin 'Pydiction'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'bling/vim-airline'
+Plug 'Markdown'
+Plug 'elentok/plaintasks.vim'
+Plug 'less.vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'mattn/emmet-vim'
+Plug 'rgrinberg/vim-ocaml'
+Plug 'ocaml.annot.pl'
+Plug 'Pydiction'
+Plug 'fsharp/vim-fsharp'
+Plug 'bling/vim-airline'
 
-filetype plugin indent on
+" load last to take precedence
+Plug 'editorconfig-vim'
+
+call plug#end()
 
 let g:airline_powerline_fonts = 1
 
@@ -69,20 +81,34 @@ let g:rbpt_colorpairs = [
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 
+" vim-jsx
+let g:jsx_ext_required = 0
+
+" vim-flow
+let g:flow#enable = 1
+let g:flow#autoclose = 1
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_jump = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['standard']
+
 " typescript
 let g:typescript_compiler_options = '-sourcemap'
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-" JSNext
-au BufNewFile,BufRead *.es6 setf javascript
-
 " Pydiction
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
+let g:pydiction_location = '~/vimfiles/plugged/Pydiction/complete-dict'
 let g:pydiction_menu_height = 4
 
 " on with the show
-let $TMP=expand('~/tmp')
 set autochdir
 set modelines=0
 set nobackup
@@ -238,5 +264,4 @@ set relativenumber
  " Enable a nice big viminfo file
 set viminfo='500,f1,:500,/500
 set history=200
-
 
