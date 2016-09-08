@@ -1,20 +1,36 @@
 " General
 set nocompatible
-filetype off
 
 " vim-plug Plug Manager
 call plug#begin('~/.vim/plugged')
 
 " themes
+Plug 'zenburn'
 Plug 'molokai'
 
-" tools
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-fugitive'
+" general
 Plug 'tpope/vim-surround'
-Plug 'ctrlp.vim'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
+Plug 'airblade/vim-gitgutter'
+Plug 'nathanaelkane/vim-indent-guides'
+
+" autocomplete
+Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --tern-completer --omnisharp-completer'}
+
+" JavaScript
+Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
+Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
+Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'javascript.jsx']}
+Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
+
+" tools
+Plug 'flowtype/vim-flow', {'for': ['javascript', 'javascript.jsx']}
+Plug 'scrooloose/syntastic'
 
 " parens in the hizouse
 Plug 'kien/rainbow_parentheses.vim'
@@ -22,21 +38,21 @@ Plug 'wlangstroth/vim-racket'
 
 " just plain handy to have around
 Plug 'Markdown'
+Plug 'elentok/plaintasks.vim'
 Plug 'less.vim'
-Plug 'Sass'
+Plug 'cakebaker/scss-syntax.vim'
 Plug 'mattn/emmet-vim'
+Plug 'rgrinberg/vim-ocaml'
+Plug 'ocaml.annot.pl'
 Plug 'fatih/vim-go'
 Plug 'Pydiction'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'leafgarland/typescript-vim'
+Plug 'fsharp/vim-fsharp'
 Plug 'bling/vim-airline'
 
 " load last to take precedence
 Plug 'editorconfig-vim'
 
 call plug#end()
-filetype plugin indent on
 
 set t_Co=256
 
@@ -57,6 +73,24 @@ let g:rbpt_colorpairs = [
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesisLoadRound
 au BufNewFile,BufRead *.rkts set filetype=racket
+
+" vim-jsx
+let g:jsx_ext_required = 0
+
+" vim-flow
+let g:flow#enable = 1
+let g:flow#autoclose = 1
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_jump = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['standard']
 
 " typescript
 let g:typescript_compiler_options = '-sourcemap'
@@ -193,6 +227,8 @@ map <F2> :NERDTreeToggle<CR>
 nnoremap <silent> <F3> :YRShow<CR>
 inoremap <silent> <F3> <ESC>:YRShow<CR>
 inoremap jj <ESC>
+nnoremap <C-p> :FZF<CR>
+inoremap <C-p> <ESC>:FZF<CR>i
 " disable arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
