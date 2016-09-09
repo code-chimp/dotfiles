@@ -4,17 +4,14 @@
 AdvancedNewFile
 Alignment
 Anaconda
-AutoFileName
 Babel
 Babel Snippets
-Better CoffeeScript
-Better TypeScript
 BoundKeys
 BracketHighlighter
+C# Snippets
 Chain of Command
 ChangeQuotes
 Color Highlighter
-CSS3
 Cucumber
 Cucumber Step Finder
 DocBlockr
@@ -33,36 +30,36 @@ Gulp
 Handlebars
 HexViewer
 HTML-CSS-JS Prettify
-HTML5
-Jade
-jQuery
-JsFormat
+JavaScriptNext - ES6 Syntax
+Kulture
 LESS
 LESS-build
 List stylesheet variables
-Markdown Extended
 Markdown Preview
-Oceanic Next Color Scheme
+OmniSharp
 Origami
+PlainNotes
+PlainTasks
 Pretty JSON
 Print to HTML
 RAML Syntax Highlighter
-RegReplace
 Sass
 SASS Build
 SCSS
 SideBarEnhancements
 Simple Print Function
 SqlBeautifier
-Stylus
+StandardFormat
 SublimeCodeIntel
 SublimeLinter
-SublimeLinter-contrib-eslint
+SublimeLinter-contrib-standard
 SublimeREPL
 SyncedSideBar
 Terminal
 Theme - Afterglow
 TrailingSpaces
+TSQLEasy
+TypeScript
 WordCount
 Zeus
 
