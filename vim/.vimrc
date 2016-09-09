@@ -21,10 +21,13 @@ Plug 'nathanaelkane/vim-indent-guides'
 " autocomplete
 Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --tern-completer --omnisharp-completer'}
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " JavaScript
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
+Plug 'isRuslan/vim-es6', {'for': ['javascript', 'javascript.jsx']}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'javascript.jsx']}
 Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
 
@@ -91,6 +94,11 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['standard']
+
+" ycm / ultisnips / supertab
+let g:ycm_key_list_select_completion=['\<C-TAB>', '\<DOWN>']
+let g:ycm_key_list_previous_completion=['\<C-S-TAB>', '\<UP>']
+let g:SuperTabDefaultCompletionType='\<C-TAB>'
 
 " typescript
 let g:typescript_compiler_options = '-sourcemap'
