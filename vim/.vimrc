@@ -48,6 +48,7 @@ Plug 'less.vim', {'for': ['less']}
 Plug 'Markdown', {'for': ['markdown']}
 Plug 'rgrinberg/vim-ocaml', {'for': ['ocaml']}
 Plug 'ocaml.annot.pl', {'for': ['ocaml']}
+Plug 'PProvost/vim-ps1', {'for': ['powershell']}
 Plug 'Puppet-Syntax-Highlighting', {'for': ['puppet']}
 Plug 'Pydiction', {'for': ['python']}
 Plug 'cakebaker/scss-syntax.vim', {'for': ['scss']}
