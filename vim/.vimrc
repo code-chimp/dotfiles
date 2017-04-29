@@ -5,8 +5,8 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 " themes
-Plug 'zenburn'
 Plug 'molokai'
+Plug 'dracula/vim'
 
 " general
 Plug 'tpope/vim-surround'
@@ -25,32 +25,43 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " JavaScript
+Plug 'gavocanov/vim-js-indent', {'for': ['javascript', 'javascript.jsx']}
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 Plug 'isRuslan/vim-es6', {'for': ['javascript', 'javascript.jsx']}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'javascript.jsx']}
+Plug 'flowtype/vim-flow', {'for': ['javascript', 'javascript.jsx']}
 Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
 
 " tools
-Plug 'flowtype/vim-flow', {'for': ['javascript', 'javascript.jsx']}
 Plug 'scrooloose/syntastic'
+Plug 'justinmk/vim-sneak'
 
 " parens in the hizouse
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'wlangstroth/vim-racket'
+Plug 'kovisoft/slimv'
+
+" the odd language
+Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
+Plug 'fatih/vim-go', {'for': ['go']}
+Plug 'less.vim', {'for': ['less']}
+Plug 'Markdown', {'for': ['markdown']}
+Plug 'rgrinberg/vim-ocaml', {'for': ['ocaml']}
+Plug 'ocaml.annot.pl', {'for': ['ocaml']}
+Plug 'Puppet-Syntax-Highlighting', {'for': ['puppet']}
+Plug 'Pydiction', {'for': ['python']}
+Plug 'cakebaker/scss-syntax.vim', {'for': ['scss']}
+Plug 'vim-scala', {'for': ['scala']}
+Plug 'wlangstroth/vim-racket', {'for': ['racket']}
+Plug 'wting/rust.vim', {'for': ['rust']}
+Plug 'cespare/vim-toml', {'for': ['toml']}
 
 " just plain handy to have around
-Plug 'Markdown'
 Plug 'elentok/plaintasks.vim'
-Plug 'less.vim'
-Plug 'cakebaker/scss-syntax.vim'
+Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim'
-Plug 'rgrinberg/vim-ocaml'
-Plug 'ocaml.annot.pl'
-Plug 'fatih/vim-go'
-Plug 'Pydiction'
-Plug 'fsharp/vim-fsharp'
 Plug 'bling/vim-airline'
+Plug 'mustache/vim-mustache-handlebars'
 
 " load last to take precedence
 Plug 'editorconfig-vim'
