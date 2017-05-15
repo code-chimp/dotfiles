@@ -10,4 +10,4 @@
 
 ## Windows
 
-(?)
+<home>\AppData\Roaming\Code\User\snippets
