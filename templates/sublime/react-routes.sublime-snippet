@@ -1,0 +1,25 @@
+<snippet>
+    <content><![CDATA[import React from 'react'
+import {
+  IndexRoute,
+  Route
+} from 'react-router'
+
+import Main from './components/Main'
+import Home from './components/Home'
+import FourOhFour from './components/FourOhFour'
+
+const routes = (
+  <Route path='/' component={Main}>
+    <IndexRoute component={Home} />
+    <Route path='*' component={FourOhFour} />
+  </Route>
+)
+
+export default routes
+
+]]></content>
+    <tabTrigger>react-rt</tabTrigger>
+    <scope>source.js, source.jsx</scope>
+    <description>React Routes</description>
+</snippet>

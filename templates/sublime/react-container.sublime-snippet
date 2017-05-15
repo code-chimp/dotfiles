@@ -1,0 +1,32 @@
+<snippet>
+    <content><![CDATA[import React, { Component } from 'react'
+import { PropTypes } from 'prop-types'
+import { connect } from 'react-redux'
+
+class ${1:TestComponent} extends Component {
+  static propTypes = {
+    ${4:myProp}: PropTypes.${5:string},
+    dispatch: PropTypes.func.isRequired
+  }
+
+  render () {
+    return (
+      <div className='${2:test-component}'>
+        ${6:<h1>Hi</h1>}
+      </div>
+    )
+  }
+}
+
+export default connect(
+  state => ({
+    ${3:foo}: state.${3:foo}
+  }),
+  dispatch => ({ dispatch })
+)(${1:TestComponent})
+
+]]></content>
+    <tabTrigger>react-cont</tabTrigger>
+    <scope>source.js, source.jsx</scope>
+    <description>React Redux Container</description>
+</snippet>

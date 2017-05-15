@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[import React, { Component } from 'react'
+import { PropTypes } from 'prop-types'
+
+export default class ${1:MyClass} extends Component {
+  static propTypes = {
+    ${3:myProp}: PropTypes.${4:string}.isRequired
+  }
+
+  render () {
+    return (
+      <div className='${2:test-component}'>
+        ${5:<h1>Hi</h1>}
+      </div>
+    )
+  }
+}
+
+]]></content>
+    <tabTrigger>react</tabTrigger>
+    <scope>source.js, source.jsx</scope>
+    <description>React Class</description>
+</snippet>

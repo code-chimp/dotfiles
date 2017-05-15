@@ -1,0 +1,97 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# https://atom.io/docs/latest/using-atom-basic-customization#cson
+'.source.js.jsx':
+  'react.class':
+    'prefix': 'react'
+    'description': 'React Class'
+    'body': """
+      import React, { Component } from 'react'
+      import { PropTypes } from 'prop-types'
+
+      export default class ${1:MyClass} extends Component {
+        static propTypes = {
+          ${3:myProp}: PropTypes.${4:string}.isRequired
+        }
+
+        render () {
+          return (
+            <div className='${2:my-class}'>
+              ${5:<h1>My Class</h1>}
+            </div>
+          )
+        }
+      }
+
+    """
+  'react.stateless':
+    'prefix': 'react-sl'
+    'description': 'React Stateless Component'
+    'body': """
+      import React from 'react'
+      import { PropTypes } from 'prop-types'
+
+      const ${1:MyComponent} = ({ ${3:myProp} }) => {
+        return (
+          <div className='${2:my-component}'>
+            ${4:<h1>My Component</h1>}
+          </div>
+        )
+      }
+
+      ${1:MyComponent}.propTypes = {
+        ${3:myProp}: PropTypes.string
+      }
+
+      export default ${1:MyComponent}
+
+    """
+  'react.container':
+    'prefix': 'react-cont'
+    'description': 'Redux Container'
+    'body': """
+      import React, { Component } from 'react'
+      import { PropTypes } from 'prop-types'
+      import { connect } from 'react-redux'
+
+      class ${1:MyClass} extends Component {
+        static propTypes = {
+          ${3:myProp}: PropTypes.${4:string},
+          dispatch: PropTypes.func.isRequired
+        }
+
+        render () {
+          return (
+            <div className='${2:my-class}'>
+              ${5:<h1>My Class</h1>}
+            </div>
+          )
+        }
+      }
+
+      export default connect(
+        state => ({
+          ${3:myProp}: state,${3:myProp}
+        }),
+        dispatch => ({ dispatch })
+      )(${1:MyClass})
+
+    """

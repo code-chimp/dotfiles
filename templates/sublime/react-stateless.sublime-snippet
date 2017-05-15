@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[import React from 'react'
+import { PropTypes } from 'prop-types'
+
+const ${1:MyComponent} = ({ ${2:myProp} }) => {
+  return (
+    <div className='${4:my-component}'>
+      ${5:<h1>Hi</h1>}
+    </div>
+  )
+}
+
+${1:MyComponent}.propTypes = {
+  ${2:myProp}: PropTypes.${3:string}.isRequired
+}
+
+export default ${1:MyComponent}
+
+]]></content>
+    <tabTrigger>react-sl</tabTrigger>
+    <scope>source.js, source.jsx</scope>
+    <description>React Stateless Component</description>
+</snippet>
