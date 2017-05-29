@@ -89,7 +89,7 @@
 
       export default connect(
         state => ({
-          ${3:myProp}: state,${3:myProp}
+          ${3:myProp}: state.${3:myProp}
         }),
         dispatch => ({ dispatch })
       )(${1:MyClass})
