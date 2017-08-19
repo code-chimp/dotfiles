@@ -5,49 +5,58 @@ set nocompatible
 call plug#begin('~/vimfiles/plugged')
 
 " themes
-Plug 'zenburn'
-Plug 'molokai'
+Plug 'dracula/vim'
 
 " general
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+" Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'justinmk/vim-sneak'
 
 " autocomplete
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --tern-completer --omnisharp-completer'}
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --omnisharp-completer --racer-completer'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'scrooloose/syntastic'
 
 " JavaScript
+Plug 'gavocanov/vim-js-indent', {'for': ['javascript', 'javascript.jsx']}
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 Plug 'isRuslan/vim-es6', {'for': ['javascript', 'javascript.jsx']}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'javascript.jsx']}
-Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
-
-" tools
 Plug 'flowtype/vim-flow', {'for': ['javascript', 'javascript.jsx']}
-Plug 'scrooloose/syntastic'
+Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
 
 " parens in the hizouse
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'wlangstroth/vim-racket'
+" Plug 'kovisoft/slimv'
+
+" the odd language
+Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
+" Plug 'fatih/vim-go', {'for': ['go']}
+Plug 'groenewege/vim-less', {'for': ['less']}
+Plug 'cakebaker/scss-syntax.vim', {'for': ['scss']}
+Plug 'PProvost/vim-ps1', {'for': ['powershell']}
+Plug 'rkulla/pydiction', {'for': ['python']}
+Plug 'derekwyatt/vim-scala', {'for': ['scala']}
+Plug 'wlangstroth/vim-racket', {'for': ['racket']}
+Plug 'wting/rust.vim', {'for': ['rust']}
+Plug 'cespare/vim-toml', {'for': ['toml']}
+Plug 'puppetlabs/puppet-syntax-vim', {'for': ['puppet']}
+" Plug 'rgrinberg/vim-ocaml', {'for': ['ocaml']}
+Plug 'mustache/vim-mustache-handlebars'
 
 " just plain handy to have around
-Plug 'Markdown'
 Plug 'elentok/plaintasks.vim'
-Plug 'less.vim'
-Plug 'cakebaker/scss-syntax.vim'
+Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim'
-Plug 'rgrinberg/vim-ocaml'
-Plug 'ocaml.annot.pl'
-Plug 'Pydiction'
-Plug 'fsharp/vim-fsharp'
 Plug 'bling/vim-airline'
 
 " load last to take precedence
@@ -100,7 +109,7 @@ let g:syntastic_auto_jump = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['standard']
+" let g:syntastic_javascript_checkers = ['standard']
 
 " ycm / ultisnips / supertab
 let g:ycm_key_list_select_completion=['\<C-TAB>', '\<DOWN>']
@@ -113,8 +122,14 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
 " Pydiction
-let g:pydiction_location = '~/vimfiles/plugged/Pydiction/complete-dict'
+let g:pydiction_location = '~/vimfiles/plugged/pydiction/complete-dict'
 let g:pydiction_menu_height = 4
+
+" ocaml merlin ocp-indent
+" let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+" execute "set rtp+=" . g:opamshare . "/merlin/vim/doc"
+" let g:syntastic_ocaml_checkers = ['merlin']
+" set rtp^="/home/tgoshinski/.opam/system/share/ocp-indent/vim"
 
 " on with the show
 set autochdir

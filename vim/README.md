@@ -9,6 +9,11 @@
 7. ???
 8. Profit!
 
+## OCaml
+1. `opam install merlin ocp-indent`
+2. Double-check your `set rtp^=...ocp-indent/vim` line against the opam output - it's different per system
+3. Install merlin docs `:execute "helptags ".g:opamshare."/merlin/vim/doc"`
+
 ### Windows (additional handholding required)
 
 1. Install Python 2.7.9 64bit from python.org
@@ -24,5 +29,5 @@
 10. :PlugInstall!
 11. Launch an MSBuild command prompt from Visual Studio or Visual Studio Community menu
 12. ```cd %USERPROFILE\vimfiles\plugged\YouCompleteMe```
-13. ```python install.py --omnisharp-completer --tern-completer```
+13. ```python install.py --omnisharp-completer --racer-completer```
 14. Profit!!!

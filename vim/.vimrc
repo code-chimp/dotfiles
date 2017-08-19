@@ -5,7 +5,6 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 " themes
-Plug 'molokai'
 Plug 'dracula/vim'
 
 " general
@@ -17,12 +16,14 @@ Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'justinmk/vim-sneak'
 
 " autocomplete
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --tern-completer --omnisharp-completer'}
+Plug 'Valloric/YouCompleteMe', {'do': './install.py --omnisharp-completer --racer-completer'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'scrooloose/syntastic'
 
 " JavaScript
 Plug 'gavocanov/vim-js-indent', {'for': ['javascript', 'javascript.jsx']}
@@ -33,10 +34,6 @@ Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'javascrip
 Plug 'flowtype/vim-flow', {'for': ['javascript', 'javascript.jsx']}
 Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
 
-" tools
-Plug 'scrooloose/syntastic'
-Plug 'justinmk/vim-sneak'
-
 " parens in the hizouse
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'kovisoft/slimv'
@@ -44,28 +41,26 @@ Plug 'kovisoft/slimv'
 " the odd language
 Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
 Plug 'fatih/vim-go', {'for': ['go']}
-Plug 'less.vim', {'for': ['less']}
-Plug 'Markdown', {'for': ['markdown']}
-Plug 'rgrinberg/vim-ocaml', {'for': ['ocaml']}
-Plug 'ocaml.annot.pl', {'for': ['ocaml']}
-Plug 'PProvost/vim-ps1', {'for': ['powershell']}
-Plug 'Puppet-Syntax-Highlighting', {'for': ['puppet']}
-Plug 'Pydiction', {'for': ['python']}
+Plug 'groenewege/vim-less', {'for': ['less']}
 Plug 'cakebaker/scss-syntax.vim', {'for': ['scss']}
-Plug 'vim-scala', {'for': ['scala']}
+Plug 'PProvost/vim-ps1', {'for': ['powershell']}
+Plug 'rkulla/pydiction', {'for': ['python']}
+Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 Plug 'wlangstroth/vim-racket', {'for': ['racket']}
 Plug 'wting/rust.vim', {'for': ['rust']}
 Plug 'cespare/vim-toml', {'for': ['toml']}
+Plug 'puppetlabs/puppet-syntax-vim', {'for': ['puppet']}
+Plug 'rgrinberg/vim-ocaml', {'for': ['ocaml']}
+Plug 'mustache/vim-mustache-handlebars'
 
 " just plain handy to have around
 Plug 'elentok/plaintasks.vim'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim'
 Plug 'bling/vim-airline'
-Plug 'mustache/vim-mustache-handlebars'
 
 " load last to take precedence
-Plug 'editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
@@ -105,7 +100,7 @@ let g:syntastic_auto_jump = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['standard']
+" let g:syntastic_javascript_checkers = ['standard']
 
 " ycm / ultisnips / supertab
 let g:ycm_key_list_select_completion=['\<C-TAB>', '\<DOWN>']
@@ -118,20 +113,14 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
 " Pydiction
-let g:pydiction_location = '~/.vim/plugged/Pydiction/complete-dict'
+let g:pydiction_location = '~/.vim/plugged/pydiction/complete-dict'
 let g:pydiction_menu_height = 4
 
-" ocaml merlin
-if executable('ocamlmerlin') && has('python')
-    let s:ocamlmerlin = substitute(system('opam config var share'), '\n$', '', '''') . "/ocamlerlin"
-    execute "set rtp+=".s:ocamlmerlin."/vim"
-    execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
-endif
-
+" ocaml merlin ocp-indent
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim/doc"
 let g:syntastic_ocaml_checkers = ['merlin']
-
-" ocp-indent
-autocmd FileType ocaml source substitute(system('opam config var share'), '\n$', '', '''') . "/typerex/ocp-indent/ocp-indent.vim"
+set rtp^="/home/tgoshinski/.opam/system/share/ocp-indent/vim"
 
 " on with the show
 set autochdir
@@ -191,7 +180,7 @@ set wildmode=list:longest
 
 " ui settings
 set guifont=Ubuntu\ Mono\ 12
-colorscheme molokai
+colorscheme dracula
 set laststatus=2     " always show the status line
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
  "             | | | | |  |   |      |  |     |    |
@@ -289,4 +278,3 @@ set undodir=/tmp
  " Enable a nice big viminfo file
 set viminfo='500,f1,:500,/500
 set history=200
-
