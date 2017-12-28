@@ -43,7 +43,7 @@ Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
 Plug 'fatih/vim-go', {'for': ['go']}
 Plug 'groenewege/vim-less', {'for': ['less']}
 Plug 'cakebaker/scss-syntax.vim', {'for': ['scss']}
-Plug 'PProvost/vim-ps1', {'for': ['powershell']}
+Plug 'PProvost/vim-ps1', {'for': ['powershell', 'ps1']}
 Plug 'rkulla/pydiction', {'for': ['python']}
 Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 Plug 'wlangstroth/vim-racket', {'for': ['racket']}
