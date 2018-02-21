@@ -52,6 +52,7 @@ Plug 'cespare/vim-toml', {'for': ['toml']}
 Plug 'puppetlabs/puppet-syntax-vim', {'for': ['puppet']}
 Plug 'rgrinberg/vim-ocaml', {'for': ['ocaml']}
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'tomlion/vim-solidity', {'for': ['solidity']}
 
 " just plain handy to have around
 Plug 'elentok/plaintasks.vim'
