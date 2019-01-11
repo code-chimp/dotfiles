@@ -11,7 +11,7 @@ Plug 'dracula/vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
@@ -31,12 +31,11 @@ Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 Plug 'isRuslan/vim-es6', {'for': ['javascript', 'javascript.jsx']}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'javascript.jsx']}
-Plug 'flowtype/vim-flow', {'for': ['javascript', 'javascript.jsx']}
 Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
 
 " parens in the hizouse
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'kovisoft/slimv'
+" Plug 'kovisoft/slimv'
 
 " the odd language
 Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
@@ -55,10 +54,11 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'tomlion/vim-solidity', {'for': ['solidity']}
 
 " just plain handy to have around
-Plug 'elentok/plaintasks.vim'
-Plug 'mattn/webapi-vim'
-Plug 'mattn/emmet-vim'
 Plug 'bling/vim-airline'
+Plug 'elentok/plaintasks.vim'
+Plug 'mattn/emmet-vim'
+Plug 'mattn/webapi-vim'
+Plug 'tmux-plugins/vim-tmux'
 
 " load last to take precedence
 Plug 'editorconfig/editorconfig-vim'
@@ -87,10 +87,6 @@ au BufNewFile,BufRead *.rkts set filetype=racket
 
 " vim-jsx
 let g:jsx_ext_required = 0
-
-" vim-flow
-let g:flow#enable = 1
-let g:flow#autoclose = 1
 
 " syntastic
 set statusline+=%#warningmsg#
