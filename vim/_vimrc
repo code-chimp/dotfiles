@@ -20,7 +20,7 @@ Plug 'justinmk/vim-sneak'
 
 " autocomplete
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --omnisharp-completer --racer-completer'}
+" Plug 'Valloric/YouCompleteMe', {'do': './install.py --omnisharp-completer --racer-completer'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/syntastic'
@@ -31,27 +31,21 @@ Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 Plug 'isRuslan/vim-es6', {'for': ['javascript', 'javascript.jsx']}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'javascript.jsx']}
-Plug 'flowtype/vim-flow', {'for': ['javascript', 'javascript.jsx']}
 Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
 
 " parens in the hizouse
 Plug 'kien/rainbow_parentheses.vim'
-" Plug 'kovisoft/slimv'
 
 " the odd language
 Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
-" Plug 'fatih/vim-go', {'for': ['go']}
 Plug 'groenewege/vim-less', {'for': ['less']}
 Plug 'cakebaker/scss-syntax.vim', {'for': ['scss']}
 Plug 'PProvost/vim-ps1', {'for': ['powershell']}
 Plug 'rkulla/pydiction', {'for': ['python']}
 Plug 'derekwyatt/vim-scala', {'for': ['scala']}
-Plug 'wlangstroth/vim-racket', {'for': ['racket']}
 Plug 'wting/rust.vim', {'for': ['rust']}
 Plug 'cespare/vim-toml', {'for': ['toml']}
 Plug 'puppetlabs/puppet-syntax-vim', {'for': ['puppet']}
-" Plug 'rgrinberg/vim-ocaml', {'for': ['ocaml']}
-Plug 'mustache/vim-mustache-handlebars'
 Plug 'tomlion/vim-solidity', {'for': ['solidity']}
 
 " just plain handy to have around
@@ -97,10 +91,6 @@ au Syntax * RainbowParenthesesLoadRound
 " vim-jsx
 let g:jsx_ext_required = 0
 
-" vim-flow
-let g:flow#enable = 1
-let g:flow#autoclose = 1
-
 " syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -125,12 +115,6 @@ autocmd QuickFixCmdPost    l* nested lwindow
 " Pydiction
 let g:pydiction_location = '~/vimfiles/plugged/pydiction/complete-dict'
 let g:pydiction_menu_height = 4
-
-" ocaml merlin ocp-indent
-" let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-" execute "set rtp+=" . g:opamshare . "/merlin/vim/doc"
-" let g:syntastic_ocaml_checkers = ['merlin']
-" set rtp^="/home/tgoshinski/.opam/system/share/ocp-indent/vim"
 
 " on with the show
 set autochdir
@@ -189,22 +173,8 @@ set wildignore=*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png
 set wildmode=list:longest
 
 " ui settings
-set guifont=Ubuntu_Mono_derivative_Powerlin:h10:cANSI
-colorscheme molokai
+colorscheme desert   " dracula doesn't work in standard windows terminals
 set laststatus=2     " always show the status line
-"set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
- "             | | | | |  |   |      |  |     |    |
- "             | | | | |  |   |      |  |     |    + current column
- "             | | | | |  |   |      |  |     +-- current line
- "             | | | | |  |   |      |  +-- current % into file
- "             | | | | |  |   |      +-- current syntax in square brackets
- "             | | | | |  |   +-- current fileformat
- "             | | | | |  +-- number of lines
- "             | | | | +-- preview flag in square brackets
- "             | | | +-- help flag in square brackets
- "             | | +-- readonly flag in square brackets
- "             | +-- rodified flag in square brackets
- "             +-- full path to file in the buffer
 set lazyredraw       " do not redraw while running macros
 set linespace=0
 set list
@@ -271,18 +241,18 @@ nnoremap <C-l> <C-w>l
 "gui defaults and display control
 " menu, toolbar, and right-scroll off by default
 if has("gui_running")
-    set lines=32 columns=123
+    set lines=35 columns=120
+    set guifont=Ubuntu_Mono_derivative_Powerlin:h10:cANSI
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=r
 endif
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
 nnoremap <C-m> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 nnoremap <C-t> :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
 nnoremap <C-r> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
 
 " 7.3
 set relativenumber
-"set undofile
 
 " Custom
  " Enable a nice big viminfo file

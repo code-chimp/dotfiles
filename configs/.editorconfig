@@ -6,10 +6,10 @@ indent_style = space
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{c,cpp,cs,cshtml,go,hs,py}]
+[*.{c,cpp,cs,cshtml,go,hs,java,kt,ps1,py}]
 indent_size = 4
 
-[*.{clj,css,hh,html,js,json,less,lisp,php,pug,raml,rb,rkt,rtks,sass,scm,scss,swift,ts}]
+[*.{clj,css,hh,html,jade,js,json,less,lisp,php,raml,rb,rkt,rtks,sass,scm,scss,sh,swift,ts}]
 indent_size = 2
 
 [*.go]
