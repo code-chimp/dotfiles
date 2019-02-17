@@ -6,14 +6,33 @@ indent_style = space
 trim_trailing_whitespace = true
 insert_final_newline = true
 
+[*.{c,cpp,cs,hs,java,kt}]
+indent_size = 4
+
+[*.{clj,cshtml,css,html,js,json,less,lisp,php,ps1,raml,rb,sass,scm,scss,sh,ts}]
+indent_size = 2
+
+[*.go]
+indent_size = 4
+indent_style = tab
+
+[*.py]
+indent_size = 4
+insert_final_newline=false
+
+[*.rs]
+indent_size = 4
+end_of_line = lf
+
+[Makefile]
+indent_style = tab
+
+
+
+
+
 [*.{c,cpp,cs,cshtml,go,hs,java,kt,ps1,py}]
 indent_size = 4
 
 [*.{clj,css,hh,html,jade,js,json,less,lisp,php,raml,rb,rkt,rtks,sass,scm,scss,sh,swift,ts}]
 indent_size = 2
-
-[*.go]
-indent_style = tab
-
-[Makefile]
-indent_style = tab
