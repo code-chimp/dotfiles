@@ -5,25 +5,32 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 " themes
-Plug 'dracula/vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " general
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'justinmk/vim-sneak'
+Plug 'kien/ctrlp.vim'
+
+" Fuzzy find
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf.vim'
 
 " autocomplete
-Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --omnisharp-completer --racer-completer'}
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'scrooloose/syntastic'
+" Plug 'ervandew/supertab'
+" Plug 'Valloric/YouCompleteMe', {'do': './install.py --go-completer --ts-completer'}
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+" Plug 'scrooloose/syntastic'
+
+" Linting engine
+Plug 'w0rp/ale'
 
 " JavaScript
 Plug 'gavocanov/vim-js-indent', {'for': ['javascript', 'javascript.jsx']}
@@ -35,29 +42,21 @@ Plug 'leafgarland/typescript-vim', {'for': ['typescript']}
 
 " parens in the hizouse
 Plug 'kien/rainbow_parentheses.vim'
-" Plug 'kovisoft/slimv'
 
 " the odd language
-Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
-Plug 'fatih/vim-go', {'for': ['go']}
+Plug 'plasticboy/vim-markdown', {'for': ['markdown']}
 Plug 'groenewege/vim-less', {'for': ['less']}
 Plug 'cakebaker/scss-syntax.vim', {'for': ['scss']}
-Plug 'PProvost/vim-ps1', {'for': ['powershell', 'ps1']}
-Plug 'rkulla/pydiction', {'for': ['python']}
-Plug 'derekwyatt/vim-scala', {'for': ['scala']}
-Plug 'wlangstroth/vim-racket', {'for': ['racket']}
-Plug 'wting/rust.vim', {'for': ['rust']}
-Plug 'cespare/vim-toml', {'for': ['toml']}
-Plug 'puppetlabs/puppet-syntax-vim', {'for': ['puppet']}
-Plug 'rgrinberg/vim-ocaml', {'for': ['ocaml']}
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'tomlion/vim-solidity', {'for': ['solidity']}
+" Plug 'wting/rust.vim', {'for': ['rust']}
+" Plug 'cespare/vim-toml', {'for': ['toml']}
+" Plug 'puppetlabs/puppet-syntax-vim', {'for': ['puppet']}
+" Plug 'rgrinberg/vim-ocaml', {'for': ['ocaml']}
+" Plug 'fsharp/vim-fsharp', { 'for': ['fsharp'] }
+" Plug 'PProvost/vim-ps1', {'for': ['powershell', 'ps1']}
 
 " just plain handy to have around
 Plug 'bling/vim-airline'
-Plug 'elentok/plaintasks.vim'
 Plug 'mattn/emmet-vim'
-Plug 'mattn/webapi-vim'
 Plug 'tmux-plugins/vim-tmux'
 
 " load last to take precedence
@@ -69,55 +68,90 @@ set t_Co=256
 
 let g:airline_powerline_fonts = 1
 
+" configure fzf
+if (executable('ag'))
+    let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+endif
+nnoremap <C-P> :Files<CR>
+
+" NERDTree
+map <F2> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+let g:NERDTreeQuitOnOpen=1
+
+" vim-go
+" let g:go_fmt_autosave=1
+" map <C-n> :cnext<CR>
+" map <C-m> :cprevious<CR>
+" nnoremap <leader>a :cclose<CR>
+" autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+" " autocmd FileType go nmap <leader>b <Plug>(go-build)
+" autocmd FileType go nmap <leader>r <Plug>(go-run)
+" autocmd FileType go nmap <leader>t <Plug>(go-test)
+" autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
+" function! s:build_go_files()
+"   let l:file = expand('%')
+"   if l:file =~# '^\f\+_test\.go$'
+"     call go#test#Test(0, 1)
+"   elseif l:file =~# '^\f\+\.go$'
+"     call go#cmd#Build(0)
+"   endif
+" endfunction
+" autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+
 " make lispy things pretty
 let g:rbpt_colorpairs = [
-    \ ['magenta', 'purple1'],
-    \ ['cyan', 'magenta1'],
-    \ ['green', 'slateblue1'],
-    \ ['yellow', 'cyan1'],
-    \ ['red', 'springgreen1'],
-    \ ['magenta', 'green1'],
-    \ ['cyan', 'greenyellow'],
-    \ ['green', 'yellow1'],
-    \ ['yellow', 'orange1'],
-    \ ]
+\ ['magenta', 'purple1'],
+\ ['cyan', 'magenta1'],
+\ ['green', 'slateblue1'],
+\ ['yellow', 'cyan1'],
+\ ['red', 'springgreen1'],
+\ ['magenta', 'green1'],
+\ ['cyan', 'greenyellow'],
+\ ['green', 'yellow1'],
+\ ['yellow', 'orange1'],
+\ ]
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesisLoadRound
-au BufNewFile,BufRead *.rkts set filetype=racket
 
-" vim-jsx
+" Pythonic gudniss
+" autocmd BufWritePost *.py call Flake8()
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+let python_highlight_all=1
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+" JavaScript - The Cash Maker
+let g:javascript_plugin_jsdoc = 1
 let g:jsx_ext_required = 0
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_jump = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-" let g:syntastic_javascript_checkers = ['standard']
+" teach emmet the ways of jsx
+let g:user_emmet_settings = {
+\  'javascript': {
+\    'extends': 'jsx',
+\  },
+\  'typescript': {
+\    'extends': 'tsx',
+\  },
+\}
 
-" ycm / ultisnips / supertab
-let g:ycm_key_list_select_completion=['\<C-TAB>', '\<DOWN>']
-let g:ycm_key_list_previous_completion=['\<C-S-TAB>', '\<UP>']
-let g:SuperTabDefaultCompletionType='\<C-TAB>'
+" ale linter
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_delay = 1000
+let g:ale_sign_error = '✗\ '
+let g:ale_sign_warning = '⚠\ '
+let g:ale_fixers = {
+\  '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
 
-" typescript
-let g:typescript_compiler_options = '-sourcemap'
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
+" YCM Customization
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_auto_trigger = 0
+" map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" let g:ycm_key_list_select_completion = ['\<C-TAB>', '\<DOWN>']
+" let g:ycm_key_list_previous_completion = ['\<C-S-TAB>', '\<UP>']
+" let g:SuperTabDefaultCompletionType='\<C-TAB>'
 
-" Pydiction
-let g:pydiction_location = '~/.vim/plugged/pydiction/complete-dict'
-let g:pydiction_menu_height = 4
-
-" ocaml merlin ocp-indent
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim/doc"
-let g:syntastic_ocaml_checkers = ['merlin']
-set rtp^="/home/tgoshinski/.opam/system/share/ocp-indent/vim"
 
 " on with the show
 set autochdir
@@ -157,6 +191,7 @@ set cpoptions=aABceFsmq
 
 " formatting
 set encoding=utf-8
+set fileencoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -192,7 +227,9 @@ set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
  "             | | +-- readonly flag in square brackets
  "             | +-- rodified flag in square brackets
  "             +-- full path to file in the buffer
+set ttyfast          " faster redrawing
 set lazyredraw       " do not redraw while running macros
+set cursorline       " find the current line quickly
 set linespace=0
 set list
 set listchars=tab:>-,trail:-
@@ -230,11 +267,7 @@ inoremap <F1> <ESC> " mitigate missing mode key
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 map <F2> :NERDTreeToggle<CR>
-nnoremap <silent> <F3> :YRShow<CR>
-inoremap <silent> <F3> <ESC>:YRShow<CR>
 inoremap jj <ESC>
-nnoremap <C-p> :FZF<CR>
-inoremap <C-p> <ESC>:FZF<CR>i
 " disable arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
